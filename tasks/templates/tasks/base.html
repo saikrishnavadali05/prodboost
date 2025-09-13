@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>ProdBoost</title>
+    <script src="/static/tasks/tasks.js" defer></script>
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        background: #f9fafb;
+        margin: 0;
+        padding: 0;
+      }
+      header {
+        background: #2563eb;
+        color: white;
+        padding: 1rem;
+      }
+      header a {
+        color: white;
+        text-decoration: none;
+      }
+      main {
+        padding: 2rem;
+        max-width: 800px;
+        margin: auto;
+      }
+      a.button {
+        background: #2563eb;
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 8px;
+        text-decoration: none;
+        transition: background 0.2s;
+      }
+      a.button:hover {
+        background: #1e40af;
+      }
+      .task-card {
+        background: white;
+        border-radius: 12px;
+        padding: 1rem 1.5rem;
+        margin-bottom: 1rem;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+        transition: transform 0.2s;
+      }
+      .task-card:hover {
+        transform: translateY(-2px);
+      }
+      .progress {
+        width: 100%;
+        background: #e5e7eb;
+        border-radius: 8px;
+        overflow: hidden;
+        height: 16px;
+        margin: 0.5rem 0;
+      }
+      .progress > .bar {
+        height: 100%;
+        width: 0;
+        background: linear-gradient(90deg, #34d399, #10b981);
+        transition: width .3s ease-in-out;
+      }
+      button, .btn {
+        background: #10b981;
+        color: white;
+        border: none;
+        padding: 0.4rem 0.8rem;
+        margin-top: 0.5rem;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+      button:hover, .btn:hover {
+        background: #059669;
+      }
+      small {
+        color: #6b7280;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1><a href="/">ProdBoost</a></h1>
+    </header>
+    <main>
+      {% block content %}{% endblock %}
+    </main>
+  </body>
+</html>
