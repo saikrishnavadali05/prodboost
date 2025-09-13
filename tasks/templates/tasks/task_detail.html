@@ -1,7 +1,7 @@
 <!-- prodboost\tasks\templates\tasks\task_detail.html -->
 {% extends 'tasks/base.html' %}
 {% block content %}
-  <div class="task task-card" id="task-{{ object.id }}" data-task-id="{{ object.id }}">
+<div class="task task-card" id="task-{{ object.id }}" data-task-id="{{ object.id }}">
   <h2>{{ object.title }}</h2>
   <p>{{ object.description }}</p>
   <div class="progress" aria-valuenow="{{ object.completed_steps }}" aria-valuemax="{{ object.total_steps }}">
@@ -10,6 +10,6 @@
   <p id="meta-{{ object.id }}">{{ object.completed_steps }} / {{ object.total_steps }} ({{ object.status }})</p>
 
   <button id="incr-1">+1 Step</button>
-  <button id="set-0" style="background:#ef4444">Reset</button>
+  <button id="reset-0" style="background:#ef4444">Reset</button>
 </div>
 {% endblock %}
