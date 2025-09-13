@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
   }
 
   // detail page reset button
-  const resetBtn = document.getElementById('set-0');
+  const resetBtn = document.getElementById('reset-0');
   if (resetBtn){
     resetBtn.addEventListener('click', async ()=>{
       const id = window.location.pathname.split('/').filter(Boolean).slice(-1)[0];
