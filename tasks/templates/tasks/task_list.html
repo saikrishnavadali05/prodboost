@@ -1,20 +1,23 @@
+<!-- prodboost\tasks\templates\tasks\task_list.html -->
 {% extends 'tasks/base.html' %}
 {% block content %}
   <h2>Your Tasks</h2>
   <p><a href="{% url 'tasks:create' %}" class="button">+ New Task</a></p>
   <div id="task-list">
-    {% for task in tasks %}
-      <div class="task-card" data-task-id="{{ task.id }}">
-        <h3><a href="{% url 'tasks:detail' task.id %}">{{ task.title }}</a></h3>
-        <p>{{ task.description|truncatechars:120 }}</p>
-        <div class="progress">
-          <div class="bar" style="width: {{ task.completed_steps|floatformat:0|add:'%' }}"></div>
-        </div>
-        <small>{{ task.completed_steps }} / {{ task.total_steps }} ({{ task.status }})</small><br>
-        <button class="incr" data-step="1">+1 Step</button>
-      </div>
-    {% empty %}
-      <p>No tasks yet — create one.</p>
-    {% endfor %}
+    {% if tasks %}
+        {% for task in tasks %}
+            <div class="task task-card" data-task-id="{{ task.id }}">
+                <h3><a href="{% url 'tasks:detail' task.id %}">{{ task.title }}</a></h3>
+                <p>{{ task.description|truncatechars:120 }}</p>
+                <div class="progress">
+                  <div class="bar" style="width: {{ task.completed_steps|floatformat:0|add:'%' }}"></div>
+                </div>
+                <small>{{ task.completed_steps }} / {{ task.total_steps }} ({{ task.status }})</small><br>
+                <button class="incr" data-step="1">+1 Step</button>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No tasks yet — create one.</p>
+    {% endif %}
   </div>
 {% endblock %}

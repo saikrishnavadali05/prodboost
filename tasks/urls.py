@@ -1,3 +1,4 @@
+# tasks/urls.py
 from django.urls import path
 from . import views, api
 from .views import TaskCreateView
@@ -7,7 +8,7 @@ app_name = 'tasks'
 urlpatterns = [
     path('', views.TaskListView.as_view(), name='list'),
     path('task/<int:pk>/', views.TaskDetailView.as_view(), name='detail'),
-     path('create/', TaskCreateView.as_view(), name='create'),
+    path('create/', TaskCreateView.as_view(), name='create'),
 
     # API
     path('api/tasks/', api.task_list_api, name='api-list'),
